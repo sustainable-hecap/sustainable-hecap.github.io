@@ -3,7 +3,7 @@
 ### run it in the same folder where the .tex file is. 
 ### open problems are how to do alt text (worst case would be writing a table and adding a loop at the end to insert it)
 ### also no proofreading has been done, so there might be format messes to figure out still.
-file="SusHep.html"
+file="SustHecap.html"
 cd Sections
 ### convert all images 
 ## only needs to run once so comment out after 
@@ -27,7 +27,7 @@ done
 cd ../
 pwd
 ### 
-pandoc -s SustainableHEP.tex -o temp.html -t html5 --mathjax --metadata title="Striving towards Environmental Sustainability in HECAP" --standalone #--embed-resources
+pandoc -s SustainableHEP.tex -o temp.html -t html5 --mathjax --metadata title="Environmental sustainability in basic research" --standalone #--embed-resources
 
 ### get the image paths correct
 for part in "Intro" "Computing" "Energy" "Common" "Food" "Technology" "Travel" "Waste"
