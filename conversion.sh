@@ -28,7 +28,7 @@ done
 cd ../
 pwd
 ### 
-pandoc -s SustainableHEP.tex -o temp.html -t html5 --mathjax --metadata title="Environmental sustainability in basic research" --standalone #--embed-resources
+pandoc -s SustainableHEP.tex --bibliography=SustainableHEP.bib --csl=aip.csl --citeproc -o temp.html -t html5 --mathjax --metadata title="Environmental sustainability in basic research" --standalone #--embed-resources
 
 ### get the image paths correct
 for part in "Intro" "Computing" "Energy" "Common" "Food" "Technology" "Travel" "Waste"
@@ -57,8 +57,8 @@ echo "body {" >> $file
 echo "font-family: "Atkinson Hyperlegible", sans-serif;"  >>$file
 tail +14 temp.html >>$file 
 
-### makes the case studies pretty
-sed -i "s/blockquote {/.marginline { \n margin: 1em 0 1em 1.7em;\n    padding-left: 1em;\n   border-left: 4px solid green;\n   }\n blockquote {\n/" $file
+### makes the case studies and the recommendations pretty
+sed -i "s/blockquote {/.marginline { \n margin: 1em 0 1em 1.7em;\n    padding-left: 1em;\n   border-left: 4px solid green;\n   }\n    .mdframed{\n     border-width:4px; border-style:solid; border-color:green; padding: 1em; \n } \n blockquote {\n/" $file
 
 # ### make our best practices pretty
 

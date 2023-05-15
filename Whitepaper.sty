@@ -140,19 +140,25 @@
         \node[anchor=east,rectangle,fill=Pythongreen,text=white]
         {\strut Recommendations --- #1~\
         };}}%
-  \phantomsection \addcontentsline{toc}{subsection}{Recommendations --- \currentname}}%
+
+        \phantomsection \addcontentsline{toc}{subsection}{Recommendations --- \currentname}}
+        %
 \mdfsetup{innertopmargin=10pt,linecolor=Pythongreen,%
              linewidth=2pt,topline=true,
              frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
   \begin{mdframed}[]\relax%
+    \bf Recommendations --- #1
   \begin{tabular}{>{\centering\arraybackslash} m{0.1\textwidth}m{0.85\textwidth}}
-    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Individuals.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}{\bf Individual actions:}%
+    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Individuals.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}
+      {\bf Individual actions:}%
     #2\end{minipage}\\
     \\
-    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Groups.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}{\bf Further group actions:}%
+    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Groups.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}
+      {\bf Further group actions:}%
     #3\end{minipage}\\
     \\
-    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Institutions.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}{\bf Further institutional actions:}%
+    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Institutions.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}
+      {\bf Further institutional actions:}%
 #4\end{minipage}\\
     \\
 \end{tabular}}{\end{mdframed}}
@@ -352,7 +358,7 @@ Summary}
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\textcolor{gray}{Draft}}
-\rhead{Environmental sustainability in basic research}
+\rhead{Striving towards Environmental Sustainability in HECAP+}
 \cfoot{\thepage}
 \lfoot{\textcolor{gray}{Draft}}
 \renewcommand{\headrulewidth}{0pt}
