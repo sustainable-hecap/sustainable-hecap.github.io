@@ -66,6 +66,7 @@ sed -i 's|class="references csl-bib-body" role="list">|class="references csl-bib
 
 sed -i 's|role="doc-endnotes">|role="doc-endnotes"> <h1 class="unnumbered" id="footnotes">Footnotes</h1>|' $file
 
+sed -i 's|<p><strong>Environmental sustainability in basic research</strong><br />| |' $file
 # ### make our best practices pretty
 
 rm temp.html
