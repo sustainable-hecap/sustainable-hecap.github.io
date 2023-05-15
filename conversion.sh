@@ -23,6 +23,7 @@ do
     sed -i "s/\.pdf}/\.png}/g" "$f"
 done
 
+### images in casestudies are partly put into center environment (section 6, technology in particular) this needs to be fixed by hand, otherwise the images are not converted with captions etc.
 
 cd ../
 pwd
@@ -55,4 +56,10 @@ echo "@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegibl
 echo "body {" >> $file
 echo "font-family: "Atkinson Hyperlegible", sans-serif;"  >>$file
 tail +14 temp.html >>$file 
+
+### makes the case studies pretty
+sed -i "s/blockquote {/.marginline { \n margin: 1em 0 1em 1.7em;\n    padding-left: 1em;\n   border-left: 4px solid green;\n   }\n blockquote {\n/" $file
+
+# ### make our best practices pretty
+
 rm temp.html
