@@ -60,6 +60,12 @@ tail +14 temp.html >>$file
 ### makes the case studies and the recommendations pretty
 sed -i "s/blockquote {/.marginline { \n margin: 1em 0 1em 1.7em;\n    padding-left: 1em;\n   border-left: 4px solid green;\n   }\n    .mdframed{\n     border-width:4px; border-style:solid; border-color:green; padding: 1em; \n } \n blockquote {\n/" $file
 
+### adding section titles for references and footnotes 
+
+sed -i 's|class="references csl-bib-body" role="list">|class="references csl-bib-body" role="list"><h1 class="unnumbered" id="refs">References</h1>|' $file
+
+sed -i 's|role="doc-endnotes">|role="doc-endnotes"> <h1 class="unnumbered" id="footnotes">Footnotes</h1>|' $file
+
 # ### make our best practices pretty
 
 rm temp.html
