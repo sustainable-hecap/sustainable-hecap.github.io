@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{Whitepaper}
+
+%NIKO made this part with the glossary(acrons) work.
+% PLEASE DO NOT CHANGE IT IN THE PREAMBLE OTHERWISE IT WONT WORK
+\input Sections/Acronyms
+
+\begin{document}
+\bstctlcite{bstctl:nodash} % part two of fixing the bibliography to show all authors
+\subfile{Sections/TitlePage}
+
+\newpage
+
+\tableofcontents
+
+\subfile{Sections/Forewords}
+\subfile{Sections/Executive_Summary}
+\subfile{Sections/Introduction}
+\subfile{Sections/Computing}
+\subfile{Sections/Energy}
+\subfile{Sections/Food}
+\subfile{Sections/Travel}
+\subfile{Sections/Technology}
+\subfile{Sections/Waste}
+\subfile{Sections/Acknowledgments}
+\appendix
+\subfile{Sections/AppendixA}
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,SustainableHEP}
+%\bibliography{SustainableHEP}
+
+
+\newpage
+\printglossary[title=Acronyms and Abbreviations, toctitle=Acronyms and Abbreviations, type=\acronymtype]
+
+\newpage
+\phantomsection 
+\addcontentsline{toc}{section}{Best Practices}
+\label{list:bestpractice}
+\listofBestpractice
+\makeatletter
+\let\BP@pre\relax
+\let\BP@post\relax
+\makeatother
+\newpage
+
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Case Studies}
+\label{list:casestudy}
+\listofCasestudy
+\makeatletter
+\let\CST@pre\relax
+\let\CST@post\relax
+\makeatother
+
+\newpage
+\renewcommand\listfigurename{Figures}
+\phantomsection
+\addcontentsline{toc}{section}{\listfigurename}  
+\listoffigures 
+
+\newpage
+\renewcommand\listtablename{Tables}
+\phantomsection
+\addcontentsline{toc}{section}{\listtablename} 
+\listoftables
+\newpage
+
+\newpage
+\subfile{Sections/Authors}
+\subfile{Sections/Endorsers}
+
+\end{document}
