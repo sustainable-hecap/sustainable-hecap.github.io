@@ -67,6 +67,10 @@ sed -i 's|class="references csl-bib-body" role="list">|class="references csl-bib
 sed -i 's|role="doc-endnotes">|role="doc-endnotes"> <h1 class="unnumbered" id="footnotes">Footnotes</h1>|' $file
 
 sed -i 's|<p><strong>Environmental sustainability in basic research</strong><br />| |' $file
+
+sed -i 's|An HTML version of this document|The original PDF version of this document|' $file
+
+sed -i 's|This document has been typeset in LaTeX using Atkinson Hyperlegible|This document has been converted from LaTeX using Pandoc. The font used is Atkinson Hyperlegible|' $file
 # ### make our best practices pretty
 
 rm temp.html
