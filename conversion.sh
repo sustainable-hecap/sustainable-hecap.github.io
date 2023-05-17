@@ -28,7 +28,7 @@ done
 cd ../
 pwd
 ### 
-pandoc -s SustainableHEP.tex --bibliography=SustainableHEP.bib --csl=aip.csl --citeproc -o temp.html -t html5 --mathjax --metadata title="Environmental sustainability in basic research" --standalone #--embed-resources
+pandoc -s SustainableHEP.tex --bibliography=SustainableHEP.bib --csl=aip.csl --citeproc --number-sections --toc --toc-depth 2 -o temp.html -t html5 --mathjax --metadata title="Environmental sustainability in basic research" --standalone #--embed-resources
 
 ### get the image paths correct
 for part in "Intro" "Computing" "Energy" "Common" "Food" "Technology" "Travel" "Waste"
@@ -71,6 +71,16 @@ sed -i 's|<p><strong>Environmental sustainability in basic research</strong><br 
 sed -i 's|An HTML version of this document|The original PDF version of this document|' $file
 
 sed -i 's|This document has been typeset in LaTeX using Atkinson Hyperlegible|This document has been converted from LaTeX using Pandoc. The font used is Atkinson Hyperlegible|' $file
+
+### ugly but it works
+sed -i "s|</style>|  .sidebar { \n    margin: 0;\n    margin-top: -50px;\n   margin-left:-400px;\n  padding: 0px; \n  width: 300px;\n  background-color: #f1f1f1;\n  position: fixed;\n  height: 100%;\n  overflow: auto;\n}\n\n/* Sidebar links */\n.sidebar a {\n  display: block;\n  color: black;\n  padding: 16px;\n  text-decoration: none;\n}\n\n/* Active/current link */\n .sidebar a.active {\n  background-color: #04AA6D;\n  color: white;\n}\n\n/* Links on mouse-over */\n .sidebar a:hover:not(.active) {\n  background-color: #555;\n  color: white;\n}\n</style>|" $file
+
+sed -i 's|<header id="title-block-header">| |' $file
+sed -i 's|<h1 class="title">Environmental sustainability in basic research</h1>| |' $file
+sed -i 's|</header>|<div class="sidebar">|' $file 
+
+sed -i 's|<div class="titlepage">|</div>\n<header id="title-block-header">\n<h1 class="title">Environmental sustainability in basic research</h1>\n</header>\n<div class="titlepage">|' $file
+
 # ### make our best practices pretty
 
 rm temp.html

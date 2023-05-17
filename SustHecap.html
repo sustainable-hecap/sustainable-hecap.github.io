@@ -188,7 +188,38 @@ font-family: Atkinson Hyperlegible, sans-serif;
     }
     div.csl-indent {
       margin-left: 2em;
-    }  </style>
+    }    .sidebar { 
+    margin: 0;
+    margin-top: -50px;
+   margin-left:-400px;
+  padding: 0px; 
+  width: 300px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+ .sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+ .sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
   <script
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
   type="text/javascript"></script>
@@ -197,9 +228,9 @@ font-family: Atkinson Hyperlegible, sans-serif;
   <![endif]-->
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">Environmental sustainability in basic research</h1>
-</header>
+ 
+ 
+<div class="sidebar">
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#statement-of-intent"
@@ -296,6 +327,10 @@ Figure 4</a></li>
 <li><a href="#endorsers" id="toc-endorsers">Endorsers</a></li>
 </ul>
 </nav>
+</div>
+<header id="title-block-header">
+<h1 class="title">Environmental sustainability in basic research</h1>
+</header>
 <div class="titlepage">
 <div class="flushleft">
  
