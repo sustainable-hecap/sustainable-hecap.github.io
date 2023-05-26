@@ -4,10 +4,11 @@
 \RaggedRight
 \sloppy
 \clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplementary data for \fref{fig:Intro-ComparativeEmissions}}
+
+\section{Supplementary Data for \fref{fig:Intro-ComparativeEmissions}}
 \label{sec:DataforFig1.4}
-%\exSum
 
 Tables \ref{tab:ComparativeEmissionsData} and \ref{tab:ComparativeEmissionsDenominator} contain the raw data that was used to produce \fref{fig:Intro-ComparativeEmissions}.  Each set of data was taken from a publicly-available environmental report issued by (members of) the institution in question; the original documents are referenced below.
 
@@ -18,14 +19,13 @@ Our approach differs from existing estimates of the GHG footprint per researcher
 
 \ra{1.05}
 {\setlength\tabcolsep{2pt}
-\scriptsize
+\footnotesize
 \begin{tabular}{>{\kern-\tabcolsep}ccccccccccc<{\kern-\tabcolsep}}\toprule
 \multirow{3}{*}{Sector} & \multicolumn{8}{c}{Emissions (\tCdOe)}\\
 \cmidrule{2-11}
 & \multicolumn{2}{c}{CERN } &  \multicolumn{2}{c}{MPIA } &
 \multicolumn{2}{c}{ETHZ DPHYS}& \multicolumn{2}{c}{Nikhef}& \multicolumn{2}{c}{FNAL}\\
-%\cmidrule{2-3} \cmidrule{4-5} \cmidrule{6-7} \cmidrule{8-9}
-& Institute  & Researcher & Institute & Researcher& Institute & Researcher & Institute & Researcher & Institute & Researcher\\
+& Inst.  & Res.\ & Inst. & Res.\ & Inst. & Res.\ & Inst. & Res.\ & Inst. & Res.\ \\
     \midrule
 Scope 1 (direct) & 78,169 & \cellcolor{Pythonblue!30}4.4 & 446 & 1.4 & 0 & 0 & 150 & 0.7 & 325.7 & \cellcolor{Pythonblue!30}0.2\\
 Scope 2 (indirect) & 10,672& 2.0 & 779 & 2.4 & 570\footnote{This corresponds to the total ETHZ Scope 2 emissions rescaled by the percentage of employees working in DPHYS.} & 0.9 & 0 & 0 & 143,687 & \cellcolor{Pythonblue!30}38.6\\
@@ -35,13 +35,13 @@ Food & 738 & 0.2 & 16 & 0.1 & & & & &   &  \\
 Procurement & 178,010 &\cellcolor{Pythonblue!30}10.1 & 64 & \cellcolor{Pythongreen!20}0.4 & 497 & \cellcolor{Pythongreen!20}0.3 &  & & &\\
 Waste treatment & 2,194& 0.5 & & & & &  & & 259 & 0.1\\
 \bottomrule
-\end{tabular}}
+\end{tabular}}\\
 \scriptsize{CERN data for 2019 taken from \cite{Environment:2737239,CERN-HR-STAFF-STAT-2019,CERN:2723123,CERNTownHall}, MPIA data for 2019 from \cite{Jahnke2020}, ETH data from 2018 taken from \cite{Beisert2020}, Nikhef data from 2019 from \cite{Nikhef}, Fermilab data from Ref.~\cite{FermilabEnvReport2019}. Scope 3 estimates incomplete for all but CERN.}
-\caption[Average annual GHG emission data for \ACR\ institutions]{Average annual GHG emissions (\tCdOe) for researchers at various \ACR\ institutions, by sector.  Colour-coding corresponds to key below for staff type that was used in the divisor to compute the emissions per researcher.\label{tab:ComparativeEmissionsData}} 
+\caption[Average annual GHG emission data for \ACR\ institutions]{Average annual GHG emissions (\tCdOe) for researchers at various \ACR\ institutions, by sector.  Colour-coding corresponds to key below for staff type that was used in the divisor to compute the emissions per researcher. The abbreviations `Inst.' and `Res.' are used for institute and per researcher emissions, respectively..\label{tab:ComparativeEmissionsData}} 
 \end{table*}
 
 \begin{table*}[h]
-{\scriptsize
+{\footnotesize
 \ra{1.05}
 \centering
 \begin{tabular}{>{\kern-\tabcolsep}cccccc<{\kern-\tabcolsep}}
@@ -52,8 +52,9 @@ Total staff & 5,235 & 320 & 630 & 350 & 1829\\
 \cellcolor{Pythongreen!20}Research staff &\cellcolor{Pythongreen!20} 3,430 &\cellcolor{Pythongreen!20} 150 &\cellcolor{Pythongreen!20} 450 &\cellcolor{Pythongreen!20}  350 &\cellcolor{Pythongreen!20} 1162\footnote{Includes technical staff.}\\
 \cellcolor{Pythonblue!30}Users & \cellcolor{Pythonblue!30}17,663& \cellcolor{Pythonblue!30}&\cellcolor{Pythonblue!30} & \cellcolor{Pythonblue!30}& \cellcolor{Pythonblue!30}3725\\
 \bottomrule
-\caption[Employee statistics for \ACR\ institutions]{Institute employee statistics, color-coded by type.  The same color codes are used in the researcher numbers above to show which staff statistics were used as the divisor in each case.\label{tab:ComparativeEmissionsDenominator}}
-\end{tabular}}
-\end{table*}
+\end{tabular}}\\
 \scriptsize{Employment statistics: CERN~\cite{CERN-HR-STAFF-STAT-2019}, MPIA~\cite{Jahnke2020}, ETH~\cite{Beisert2020}, Nikhef~\cite{Nikhef}, Fermilab, private communication.}
+\caption[Employee statistics for \ACR\ institutions]{Institute employee statistics, color-coded by type.  The same color codes are used in the researcher numbers above to show which staff statistics were used as the divisor in each case.\label{tab:ComparativeEmissionsDenominator}}
+\end{table*}
+
 \end{document}

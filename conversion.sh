@@ -17,10 +17,13 @@ cd Sections
 #    mv ${file}.png ${dir}/${file}.png
 # done
 ### change the image filenames
+### and change center environment for figures to get numbering
 for f in *.tex
 do
     echo $f
     sed -i "s/\.pdf}/\.png}/g" "$f"
+    sed -i "s/{center}/{figure}/g" "$f"
+    sed -i "s/\subfloat//g" "$f"
 done
 
 ### images in casestudies are partly put into center environment (section 6, technology in particular) this needs to be fixed by hand, otherwise the images are not converted with captions etc.
@@ -28,7 +31,8 @@ done
 cd ../
 pwd
 ### 
-pandoc -s SustainableHEP.tex --bibliography=SustainableHEP.bib --csl=aip.csl --citeproc --number-sections --toc --toc-depth 2 -o temp.html -t html5 --mathjax --metadata title="Environmental sustainability in basic research" --standalone #--embed-resources
+### --filter=pandoc-crossref does give figure numbers, at least for figures that are in figure environments
+pandoc -s SustainableHEP.tex   --filter=pandoc-crossref --number-sections  --bibliography=SustainableHEP.bib --citeproc --csl ieee.csl --metadata title="Environmental sustainability in basic research" --standalone --listings --toc --toc-depth 2 -o temp.html -t html5 --mathjax  #--embed-resources
 
 ### get the image paths correct
 for part in "Intro" "Computing" "Energy" "Common" "Food" "Technology" "Travel" "Waste"
@@ -62,7 +66,7 @@ sed -i "s/blockquote {/.marginline { \n margin: 1em 0 1em 1.7em;\n    padding-le
 
 ### adding section titles for references and footnotes 
 
-sed -i 's|class="references csl-bib-body" role="list">|class="references csl-bib-body" role="list"><h1 class="unnumbered" id="refs">References</h1>|' $file
+sed -i 's|class="references csl-bib-body" role="list">|class="references csl-bib-body" role="list"><h1 class="unnumbered" id="sec:Bibliography">References</h1>|' $file
 
 sed -i 's|role="doc-endnotes">|role="doc-endnotes"> <h1 class="unnumbered" id="footnotes">Footnotes</h1>|' $file
 
@@ -80,6 +84,11 @@ sed -i 's|<h1 class="title">Environmental sustainability in basic research</h1>|
 sed -i 's|</header>|<div class="sidebar">|' $file 
 
 sed -i 's|<div class="titlepage">|</div>\n<header id="title-block-header">\n<h1 class="title">Environmental sustainability in basic research</h1>\n</header>\n<div class="titlepage">|' $file
+
+
+### adding bibliography and footnotes into the toc
+
+sed -i 's|<li><a href="#endorsers" id="toc-endorsers">Endorsers</a></li>|<li><a href="#endorsers" id="toc-endorsers">Endorsers</a></li> \n <li><a href="#refs" id="toc-references">Bibliography</a></li>\n <li><a href="#footnotes" id="toc-endorsers">Footnotes</a></li>\n|' $file
 
 # ### make our best practices pretty
 
