@@ -1,0 +1,19 @@
+>&amp;<| > <
+>l l<| > <
+<p><strong>Goal 1:| <p><img src="Sections/Figs/Common/SDG_1_NoPoverty.png" style="width:11.0%" alt="Sustainable development goal 1 - logo" /><strong> Goal 1:
+<p><strong>2 | <p><img src="Sections/Figs/Common/SDG_2_ZeroHunger.png" style="width:11.0%" alt="Sustainable development goal 2 - logo" /><strong> Goal 2: 
+<p><strong>3 | <p><img src="Sections/Figs/Common/SDG_3_GoodHealth.png" style="width:11.0%" alt="Sustainable development goal 3 - logo" /><strong> Goal 3: 
+<p><strong>4 | <p><img src="Sections/Figs/Common/SDG_4_QualityEducation.png" style="width:11.0%" alt="Sustainable development goal 4 - logo" /><strong> Goal 4: 
+<p><strong>5 | <p><img src="Sections/Figs/Common/SDG_5_GenderEquality.png" style="width:11.0%" alt="Sustainable development goal 5 - logo" /><strong> Goal 5: 
+<p><strong>6 | <p><img src="Sections/Figs/Common/SDG_6_CleanWater.png" style="width:11.0%" alt="Sustainable development goal 6 - logo" /><strong> Goal 6: 
+<p><strong>7 | <p><img src="Sections/Figs/Common/SDG_7_CleanEnergy.png" style="width:11.0%" alt="Sustainable development goal 7 - logo" /><strong> Goal 7: 
+<p><strong>8 | <p><img src="Sections/Figs/Common/SDG_8_EconomicGrowth.png" style="width:11.0%" alt="Sustainable development goal 8 - logo" /><strong> Goal 8: 
+<p><strong>9 | <p><img src="Sections/Figs/Common/SDG_9_IndustryInnovation.png" style="width:11.0%" alt="Sustainable development goal 9 - logo" /><strong> Goal 9: 
+<p><strong>10 | <p><img src="Sections/Figs/Common/SDG_10_ReducedInequalities.png" style="width:11.0%" alt="Sustainable development goal 10 - logo" /><strong> Goal 10: 
+<p><strong>11 | <p><img src="Sections/Figs/Common/SDG_11_SustainableCities.png" style="width:11.0%" alt="Sustainable development goal 11 - logo" /><strong> Goal 11: 
+<p><strong>12 | <p><img src="Sections/Figs/Common/SDG_12_ResponsibleConsumption.png" style="width:11.0%" alt="Sustainable development goal 12 - logo" /><strong> Goal 12: 
+<p><strong>13 | <p><img src="Sections/Figs/Common/SDG_13_ClimateAction.png" style="width:11.0%" alt="Sustainable development goal 13 - logo" /><strong> Goal 13: 
+<p><strong>14 | <p><img src="Sections/Figs/Common/SDG_14_LifeBelowWater.png" style="width:11.0%" alt="Sustainable development goal 14 - logo" /><strong> Goal 14: 
+<p><strong>15 | <p><img src="Sections/Figs/Common/SDG_15_LifeOnLand.png" style="width:11.0%" alt="Sustainable development goal 15 - logo" /><strong> Goal 15: 
+<p><strong>16 | <p><img src="Sections/Figs/Common/SDG_16_PeaceJusticeStrongInstitutions.png" style="width:11.0%" alt="Sustainable development goal 16 - logo" /><strong> Goal 16: 
+<p><strong>17 | <p><img src="Sections/Figs/Common/SDG_17_PartnershipForGoals.png" style="width:11.0%" alt="Sustainable development goal 17 - logo" /><strong> Goal 17: 

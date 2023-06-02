@@ -1,0 +1,364 @@
+\ProvidesPackage{Whitepaper}
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[none]{hyphenat} %Remove hyphenation at the end of lines for accessibility
+%\usepackage{microtype}
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tocloft} %%% for list of custom environments
+%\usepackage{cmbright}
+\usepackage[sfdefault]{atkinson} %Typeset for readability.
+\usepackage{mathastext}
+\usepackage{bm}
+
+\usepackage{setspace}
+\setstretch{1.2} %Stretch line spacing for legibility
+\usepackage{ragged2e} %Left alignment for readability
+\setlength{\RaggedRightParindent}{30pt}
+
+% To fix footnote problem in parboxes
+\usepackage{footnote}
+\usepackage[hang,flushmargin]{footmisc}
+
+\usepackage[skip=10pt, indent=30pt, parfill]{parskip} %Paragraph skips for legibility
+
+\usepackage[sort&compress,numbers]{natbib}
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}   % Common math functions
+\usepackage{amssymb}   % Common math symbols
+\usepackage{graphicx}
+\setlength{\marginparwidth}{2cm}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{longtable}
+\usepackage{verbatim}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage[gen]{eurosym}
+\usepackage{enumitem}
+
+\newcommand{\ts}{\textsuperscript}
+
+%% More packages
+\usepackage{color}
+\usepackage{authblk}
+\usepackage{url}
+\usepackage{upgreek} % added by niko for upright Greek in mathmode
+\usepackage{currvita} %added by niko for croatian letters for niko 
+\usepackage{multirow}
+
+\usepackage{IEEEtrantools} % part one of fixing the bibliography to show all authors
+%\usepackage{fancyhdr}
+%\usepackage{longtable}
+%\usepackage{parskip}
+%\usepackage[dvipsnames]{xcolor}  
+%\usepackage{dcolumn}   % Align table columns on decimal point
+%\usepackage{bm}        % bold math
+%\usepackage{amsfonts}  % Common math fonts
+\usepackage{xspace}
+\usepackage{xurl}
+\usepackage{colortbl,booktabs}
+\usepackage{array}
+\def\UrlFont{\rmfamily}
+
+\renewcommand\Authfont{\fontsize{10}{10}\selectfont}
+\renewcommand\Affilfont{\fontsize{7}{8}\itshape}
+
+\usepackage{floatrow}
+\floatsetup[figure]{capposition=bottom}
+
+\usepackage{xcolor} % for 'HTML' color model and '\textcolor' macro
+%\usepackage[colorlinks]{hyperref} % for '\href' macro
+\definecolor{Pythongreen}{RGB}{44,160,44}
+\definecolor{Pythonblue}{RGB}{76, 114, 176}
+\definecolor{gray}{RGB}{128,128,128}
+
+%%%%%%%%% testing orcid stuff
+
+%\documentclass{IEEEtran}
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path,backgrounds,positioning,arrows,trees}
+\usepackage[utf8]{inputenc}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\tikzset{
+  orcidlogo/.pic={
+    \fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+    \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+                 svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+                 svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+  }
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+\begin{tikzpicture}[yscale=-1,transform shape]
+\pic{orcidlogo};
+\end{tikzpicture}
+}{|}}}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\usepackage[framemethod=Tikz]{mdframed}
+
+\mdfdefinestyle{MyFrame}{%
+    linecolor=black,
+    outerlinewidth=2pt,
+    %roundcorner=20pt,
+    innertopmargin=4pt,
+    innerbottommargin=4pt,
+    innerrightmargin=4pt,
+    innerleftmargin=4pt,
+        leftmargin = 4pt,
+        rightmargin = 4pt
+    %backgroundcolor=gray!50!white}
+        }
+
+% From https://tex.stackexchange.com/questions/75168/get-current-section-name-without-label
+ \usepackage{titleref}
+ \makeatletter
+ \newcommand*{\currentname}{\TR@currentTitle}
+ \makeatother
+%%%% This takes the 'current title' which includes the subsection. So, if we add the subsection 'executive summary' to the ToC then the Recommendations ToC line will also say executive summary. One possible workaround would be to define a \subsection*{Section name) after adding the executive summary. Or to figure out why this takes the subsection name and fix it -- L
+%%% Actually, nevermind, if we add the executive summary line using the command \exSum defined below then it does end up working.
+   
+\newcounter{reco2}[section]
+\newenvironment{reco2}[4]{%
+ \stepcounter{reco2}%
+  \ifstrempty{#1}%
+  {\mdfsetup{%
+    frametitle={%
+      \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=Pythongreen,text=white]
+        {\strut \ Recommendations~\ %
+        };}}
+  }%
+   {\mdfsetup{%
+     frametitle={%
+      \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=Pythongreen,text=white]
+        {\strut Recommendations --- #1~\
+        };}}%
+
+        \phantomsection \addcontentsline{toc}{subsection}{Recommendations --- \currentname}}
+        %
+\mdfsetup{innertopmargin=10pt,linecolor=Pythongreen,%
+             linewidth=2pt,topline=true,
+             frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+  \begin{mdframed}[]\relax%
+    \bf Recommendations --- #1
+  \begin{tabular}{>{\centering\arraybackslash} m{0.1\textwidth}m{0.85\textwidth}}
+    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Individuals.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}
+      {\bf Individual actions:}%
+    #2\end{minipage}\\
+    \\
+    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Groups.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}
+      {\bf Further group actions:}%
+    #3\end{minipage}\\
+    \\
+    \begin{minipage}[t]{\iconsize}\vspace{0pt}\includegraphics[width=\textwidth]{Sections/Figs/Common/Icon_Institutions.jpg}\end{minipage} & \begin{minipage}[t]{0.85\textwidth}\vspace{0pt}
+      {\bf Further institutional actions:}%
+#4\end{minipage}\\
+    \\
+\end{tabular}}{\end{mdframed}}
+
+%% commenting commands
+%% ADD YOURS
+
+\newcommand{\niko}[1]{\textcolor{orange}{NIKO: #1}}
+\newcommand{\patrick}[1]{\textcolor{red}{PATRICK: #1}}
+\newcommand{\rakhi}[1]{\textcolor{green}{RAKHI: #1}}
+\newcommand{\harold}[1]{\textcolor{purple}{[HAROLD: #1]}}
+
+\usepackage{subfiles}
+
+
+\graphicspath{{Sections/Figs}}
+
+%%% Acronym macro
+\newcommand{\ACR}{HECAP+}
+\newcommand{\CdO}{$\mathrm{CO}_2$}
+\newcommand{\CdOe}{$\mathrm{CO}_2\mathrm{e}$}
+\newcommand{\tCdO}{$\mathrm{tCO}_2$}
+\newcommand{\tCdOe}{$\mathrm{tCO}_2\mathrm{e}$}
+\newcommand{\bmtCdOe}{$\mathbf{tCO}_{\bm{2}}\mathbf{e}$}
+\newcommand{\eg}{e.g.,\ }
+\newcommand{\ie}{i.e.,\ }
+% \newcommand{\eg}{\textit{e.g.},\ } Pete edited, since best practice for readibility suggests no italics.
+% \newcommand{\ie}{\textit{i.e.},\ }
+\newcommand{\fref}[1]{Figure~\ref{#1}}
+\newcommand{\tref}[1]{Table~\ref{#1}}
+\newcommand{\csref}[1]{Case Study~\ref{#1}}
+\newcommand{\bpref}[1]{Best Practice~\ref{#1}}
+\newcommand{\sref}[1]{Section~\ref{#1}}
+
+
+
+%\usepackage{subfig}
+%https://tex.stackexchange.com/questions/101591/setting-font-size-for-caption-package
+\DeclareCaptionFormat{captionfont}{\fontsize{10.5}{12.6}\selectfont#1#2#3}
+\usepackage[labelfont=bf,format=captionfont]{caption}
+
+\usepackage{subcaption}
+\usepackage{ragged2e}
+\usepackage{lscape}
+
+
+
+% Stolen from https://tex.stackexchange.com/questions/86381/adding-vertical-lines-to-each-side-of-a-paragraph
+%\usepackage{mdframed}
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  leftmargin=-10pt,
+  rightmargin=-10pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  linecolor=Pythongreen,
+  linewidth=3pt
+]{marginline}
+
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+  leftmargin=-10pt,
+  rightmargin=-10pt,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  linecolor=gray,
+  linewidth=3pt
+]{marginlinegray}
+
+\newcommand{\listCasestudy}{\Large Case Studies}
+\newlistof[section]{Casestudy}{CST}{\listCasestudy}
+
+%\newcounter{casestudy}[section] %% then it numbers them by section
+\newcounter{casestudy}
+
+\newenvironment{casestudy}[2][]{%
+\vspace{2em}
+    \refstepcounter{casestudy}
+            \phantomsection
+        \addcontentsline{CST}{Casestudy}{\protect\numberline {CS\thecasestudy}#2 }%
+    \begin{marginline}
+    {\bf Case Study~\thecasestudy:~#1}\\ \noindent
+    }{\end{marginline}}
+
+
+\newcommand{\listBestpractice}{\Large Best Practices}
+\newlistof[section]{Bestpractice}{BP}{\listBestpractice}
+%\newcounter{bestpractice}[section]
+
+\newcounter{bestpractice}
+\newenvironment{bestpractice}[2][]{%
+\vspace{2em}
+    \refstepcounter{bestpractice}
+        \phantomsection
+    \addcontentsline{BP}{Bestpractice}{\protect\numberline {BP\thebestpractice}#2}
+    \begin{marginline}
+    {\bf Best Practice~\thebestpractice:~#1}\\ \noindent
+    }{\end{marginline}}
+
+\newenvironment{inset}[2][]{%
+        \phantomsection
+    \begin{marginlinegray}
+    {\bf Inset:~#1}\\ \noindent
+    }{\end{marginlinegray}}
+   
+%%% attempt to fix numbering
+
+\setlength{\cftCasestudynumwidth}{1.5cm}
+\setlength{\cftBestpracticenumwidth}{1.5cm}
+\setlength{\cftfignumwidth}{1.5cm}
+\setlength{\cfttabnumwidth}{1.5cm}
+    
+%% Image sizes    
+    
+\newcommand{\SDGsize}{0.11\textwidth}
+\newcommand{\iconsize}{1.1cm}
+
+%% add label to figures + tables
+\renewcommand{\cftfigpresnum}{Fig}
+\renewcommand{\cfttabpresnum}{Tab}
+
+%% adjust spacing to make list of tables / list of figures match casestudies and best practices
+\addtolength{\cftfignumwidth}{15pt}
+\addtolength{\cfttabnumwidth}{15pt}
+
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{bestpractice}{section}
+\numberwithin{casestudy}{section}
+
+\setcounter{tocdepth}{2}
+
+
+%%% A possibel short command to add a Executive summmary line to the begining of sections, if we do it like this we can also decide to change the name for all of them at once.
+\newcommand{\exSum}{
+%\subsection*{Executive Summary}
+\addcontentsline{toc}{subsection}{%Executive
+Summary}
+    
+}
+
+\newenvironment{to_do}[1][]{%
+  \ifstrempty{#1}%
+  {\mdfsetup{%
+    frametitle={%
+      \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=Pythonblue,text=white]
+        {\strut \ To do~\
+        };}}
+  }%
+  {\mdfsetup{%
+     frametitle={%
+      \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=Pythonblue,text=white]
+        {\strut To do~
+        :~#1};}}%
+  }%
+  \mdfsetup{innertopmargin=10pt,linecolor=Pythonblue,%
+             linewidth=2pt,topline=true,
+             frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+  \begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+\newenvironment{disclaimer}[1][]{%
+  \ifstrempty{#1}%
+  {\mdfsetup{%
+    frametitle={%
+      \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=Pythonblue,text=white]
+        {\strut \ Important:~Statement of intent~\
+        };}}
+  }%
+  {\mdfsetup{%
+     frametitle={%
+      \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=Pythonblue,text=white]
+        {\strut Disclaimer:~#1};}}%
+  }%
+  \mdfsetup{innertopmargin=10pt,linecolor=Pythonblue,%
+             linewidth=2pt,topline=true,
+             frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+  \begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+\urlstyle{sf}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{gray}{Draft}}
+\rhead{Striving towards Environmental Sustainability in HECAP+}
+\cfoot{\thepage}
+\lfoot{\textcolor{gray}{Draft}}
+\renewcommand{\headrulewidth}{0pt}
