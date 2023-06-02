@@ -1,8 +1,12 @@
 #!/bin/bash
 ### This script should work to transform our .tex file into a html webpage 
 ### run it in the same folder where the .tex file is. 
-### open problems are how to do alt text (worst case would be writing a table and adding a loop at the end to insert it)
-### also no proofreading has been done, so there might be format messes to figure out still.
+### a lot of things are done via sed in pre and post processing steps
+### only problem to do by hand are the recommendation boxes.
+### search for mdframed environments and then insert the line 
+###   <p><h3>Recommendations - Impelling Positive Change </h3></p> 
+### with the suitable headline added
+
 file="SustHecap.html"
 cd Sections
 ### convert all images 
