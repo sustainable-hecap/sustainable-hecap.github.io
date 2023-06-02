@@ -7,15 +7,15 @@ file="SustHecap.html"
 cd Sections
 ### convert all images 
 ## only needs to run once so comment out after 
-# find ./Figs -type f -name "*.pdf" |while read line
-# do  
-#    dir=${line%/*}
-#    file=${line##*/}
-#    file=${file%.*}
-#    convert -transparent white $line ${file}.png
-#    #echo mv ${file}.png ${dir}/${file}.png
-#    mv ${file}.png ${dir}/${file}.png
-# done
+find ./Figs -type f -name "*.pdf" |while read line
+do  
+   dir=${line%/*}
+   file=${line##*/}
+   file=${file%.*}
+   convert -transparent white $line ${file}.png
+   #echo mv ${file}.png ${dir}/${file}.png
+   mv ${file}.png ${dir}/${file}.png
+done
 ### change the image filenames
 ### and change center environment for figures to get numbering
 for f in *.tex
@@ -23,7 +23,7 @@ do
     echo $f
     sed -i "s/\.pdf}/\.png}/g" "$f"
     sed -i "s/{center}/{figure}/g" "$f"
-    sed -i "s/\subfloat//g" "$f"
+    sed -i "s/\subfloat/ /g" "$f"
 done
 
 ### images in casestudies are partly put into center environment (section 6, technology in particular) this needs to be fixed by hand, otherwise the images are not converted with captions etc.

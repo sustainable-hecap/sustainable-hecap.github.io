@@ -12,7 +12,7 @@
 
 Tables \ref{tab:ComparativeEmissionsData} and \ref{tab:ComparativeEmissionsDenominator} contain the raw data that was used to produce \fref{fig:Intro-ComparativeEmissions}.  Each set of data was taken from a publicly-available environmental report issued by (members of) the institution in question; the original documents are referenced below.
 
-Our approach differs from existing estimates of the GHG footprint per researcher in the divisor used to compute this quantity.  We shared the emissions per resource equally by the total number using that resource, whether it be total number of employees, or research staff, or in the case of large laboratories like CERN, the number of Users, rather than using the same divisor throughout.  For instance, while we divide the commuting emissions for each institute by the total number of employees, we assign the business travel emissions solely to the research staff, assuming the support staff have negligible long-distance travel.  For concreteness we have colour-coded the per-researcher estimates in Table \ref{tab:ComparativeEmissionsData} by the denominators used in their computation, with the colour key provided in Table \ref{tab:ComparativeEmissionsDenominator}. 
+Our approach differs from existing estimates of the \acrshort{ghg} footprint per researcher in the divisor used to compute this quantity.  We shared the emissions per resource equally by the total number using that resource, whether it be total number of employees, or research staff, or in the case of large laboratories like \acrshort{cern}, the number of Users, rather than using the same divisor throughout.  For instance, while we divide the commuting emissions for each institute by the total number of employees, we assign the business travel emissions solely to the research staff, assuming the support staff have negligible long-distance travel.  For concreteness, we have colour-coded the per-researcher estimates in Table \ref{tab:ComparativeEmissionsData} by the denominators used in their computation, with the colour key provided in Table \ref{tab:ComparativeEmissionsDenominator}. 
 
 \begin{table*}[h!]
 \centering
@@ -28,7 +28,7 @@ Our approach differs from existing estimates of the GHG footprint per researcher
 & Inst.  & Res.\ & Inst. & Res.\ & Inst. & Res.\ & Inst. & Res.\ & Inst. & Res.\ \\
     \midrule
 Scope 1 (direct) & 78,169 & \cellcolor{Pythonblue!30}4.4 & 446 & 1.4 & 0 & 0 & 150 & 0.7 & 325.7 & \cellcolor{Pythonblue!30}0.2\\
-Scope 2 (indirect) & 10,672& 2.0 & 779 & 2.4 & 570\footnote{This corresponds to the total ETHZ Scope 2 emissions rescaled by the percentage of employees working in DPHYS.} & 0.9 & 0 & 0 & 143,687 & \cellcolor{Pythonblue!30}38.6\\
+Scope 2 (indirect) & 10,672& 2.0 & 779 & 2.4 & 570\footnote{This corresponds to the total ETHZ Scope 2 emissions rescaled by the percentage of employees working in \acrshort{dphys}.} & 0.9 & 0 & 0 & 143,687 & \cellcolor{Pythonblue!30}38.6\\
 Travel (business) & 3,330 & \cellcolor{Pythongreen!20}1.0 & 1,280 & \cellcolor{Pythongreen!20}8.5 & 1,449 & \cellcolor{Pythongreen!20}3.2 & 785 & \cellcolor{Pythongreen!20} 3.3 & 2,658 & \cellcolor{Pythongreen!20}2.3\\
 Travel (commuting) & 5,836 & 1.1 & 139 & 0.9 & 1,700 & 0.2 & 146 & 0.7 & 5,393 & 2.9\\
 Food & 738 & 0.2 & 16 & 0.1 & & & & &   &  \\
@@ -36,8 +36,8 @@ Procurement & 178,010 &\cellcolor{Pythonblue!30}10.1 & 64 & \cellcolor{Pythongre
 Waste treatment & 2,194& 0.5 & & & & &  & & 259 & 0.1\\
 \bottomrule
 \end{tabular}}\\
-\scriptsize{CERN data for 2019 taken from \cite{Environment:2737239,CERN-HR-STAFF-STAT-2019,CERN:2723123,CERNTownHall}, MPIA data for 2019 from \cite{Jahnke2020}, ETH data from 2018 taken from \cite{Beisert2020}, Nikhef data from 2019 from \cite{Nikhef}, Fermilab data from Ref.~\cite{FermilabEnvReport2019}. Scope 3 estimates incomplete for all but CERN.}
-\caption[Average annual GHG emission data for \ACR\ institutions]{Average annual GHG emissions (\tCdOe) for researchers at various \ACR\ institutions, by sector.  Colour-coding corresponds to key below for staff type that was used in the divisor to compute the emissions per researcher. The abbreviations `Inst.' and `Res.' are used for institute and per researcher emissions, respectively..\label{tab:ComparativeEmissionsData}} 
+\scriptsize{CERN data for 2019 is taken from Refs.~\cite{Environment:2737239,CERN-HR-STAFF-STAT-2019,CERN:2723123,CERNTownHall}, \acrshort{mpia} data for 2019 from Ref.~\cite{Jahnke2020}, \acrshort{eth} \acrshort{dphys} data from 2018 taken from Ref.~\cite{Beisert2020}, \acrshort{nikhef} data from 2019 from Ref.~\cite{Nikhef}, and \acrshort{fnal} data from Refs.~\cite{FermilabEnvReport2019,FNALPrivate}. Scope 3 estimates incomplete for all but CERN.}
+\caption[Average annual GHG emission data for \acrshort{hecap} institutions]{Average annual GHG emissions (\acrshort{tco2e}) for researchers at various \ACR\ institutions, by sector.  Colour-coding corresponds to the key in Table~\ref{tab:ComparativeEmissionsDenominator} for staff type that was used in the divisor to compute the emissions per researcher. The abbreviations `Inst.' and `Res.' are used to indicate institute and per-researcher emissions, respectively.\label{tab:ComparativeEmissionsData}} 
 \end{table*}
 
 \begin{table*}[h]
@@ -53,8 +53,8 @@ Total staff & 5,235 & 320 & 630 & 350 & 1829\\
 \cellcolor{Pythonblue!30}Users & \cellcolor{Pythonblue!30}17,663& \cellcolor{Pythonblue!30}&\cellcolor{Pythonblue!30} & \cellcolor{Pythonblue!30}& \cellcolor{Pythonblue!30}3725\\
 \bottomrule
 \end{tabular}}\\
-\scriptsize{Employment statistics: CERN~\cite{CERN-HR-STAFF-STAT-2019}, MPIA~\cite{Jahnke2020}, ETH~\cite{Beisert2020}, Nikhef~\cite{Nikhef}, Fermilab, private communication.}
-\caption[Employee statistics for \ACR\ institutions]{Institute employee statistics, color-coded by type.  The same color codes are used in the researcher numbers above to show which staff statistics were used as the divisor in each case.\label{tab:ComparativeEmissionsDenominator}}
+\scriptsize{Employment statistics: CERN~\cite{CERN-HR-STAFF-STAT-2019}, MPIA~\cite{Jahnke2020}, ETH~\cite{Beisert2020}, Nikhef~\cite{Nikhef}, FNAL~\cite{FNALPrivate2}.}
+\caption[Employee statistics for \ACR\ institutions]{Institute employee statistics, colour-coded by type.  The same colour codes are used in the researcher numbers above to show which staff statistics were used as the divisor in each case.\label{tab:ComparativeEmissionsDenominator}}
 \end{table*}
 
 \end{document}

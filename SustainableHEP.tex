@@ -1,8 +1,10 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{Whitepaper}
 
+
 %NIKO made this part with the glossary(acrons) work.
 % PLEASE DO NOT CHANGE IT IN THE PREAMBLE OTHERWISE IT WONT WORK
+
 \input Sections/Acronyms
 
 \begin{document}
@@ -22,19 +24,23 @@
 \subfile{Sections/Travel}
 \subfile{Sections/Technology}
 \subfile{Sections/Waste}
+\subfile{Sections/Outlook}
 \subfile{Sections/Acknowledgments}
 \appendix
 \subfile{Sections/AppendixA}
 
-\newpage
+\clearpage
+\RaggedRight
+\sloppy
 \phantomsection
 \addcontentsline{toc}{section}{Bibliography}
-\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtran-SHEP} % Ayan: use the modified version for correct bibliography formatting
 \bibliography{IEEEabrv,SustainableHEP}
 %\bibliography{SustainableHEP}
 
-
 \newpage
+\RaggedRight
+\sloppy
 \printglossary[title=Acronyms and Abbreviations, toctitle=Acronyms and Abbreviations, type=\acronymtype]
 
 \newpage
